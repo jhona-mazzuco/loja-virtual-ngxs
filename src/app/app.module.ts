@@ -7,10 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from "./shared/components/navbar/navbar.component";
 import { HttpClientModule } from "@angular/common/http";
 import { OverlayModule } from "@angular/cdk/overlay";
+import { NgxsModule } from "@ngxs/store";
+import { ShoppingCartState } from "./shared/states/shopping-cart.state";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -18,7 +20,8 @@ import { OverlayModule } from "@angular/cdk/overlay";
     BrowserAnimationsModule,
     HttpClientModule,
     NavbarComponent,
-    OverlayModule
+    OverlayModule,
+    NgxsModule.forRoot([ShoppingCartState])
   ],
   bootstrap: [AppComponent]
 })

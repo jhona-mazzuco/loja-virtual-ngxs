@@ -5,14 +5,23 @@
 
   <mat-card-content>
     <div class="container">
-      <ng-container *ngIf="items?.length;else EmptyTemplate">
-        <ng-container *ngFor="let item of items">
-          <ul class="container__list">
-            <li class="container__item">
-              <img ngSrc="{{ item.images[0] }}" width="60" height="60" />
-              <span>{{ item.title  }}</span>
-            </li>
-          </ul>
+      <ng-container *ngIf="items$ | async;let items">
+        <ng-container *ngIf="items.length;else EmptyTemplate">
+          <ng-container *ngFor="let item of items">
+            <ul class="container__list">
+              <li class="container__item">
+                <img ngSrc="{{ item.product.images[0] }}" width="60" height="60"/>
+                <div class="container__detail">
+                  <span class="container__title">{{ item.product.title }}</span>
+                  <p class="container__price">{{ item.product.price | currency: 'R$' }}</p>
+                  <div class="container__row">
+                    <span [matBadge]="item.qty"></span>
+                    <app-remove-product [id]="item.id"></app-remove-product>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </ng-container>
         </ng-container>
       </ng-container>
       <ng-template #EmptyTemplate>
@@ -21,6 +30,10 @@
     </div>
 
     <div class="footer">
+      <ng-container *ngIf="items$ | async;let items">
+        <p class="footer__total" *ngIf="items?.length">Total: {{ items | sumTotal | currency: 'R$' }}</p>
+      </ng-container>
+
       <button class="footer__button" mat-flat-button color="primary">
         Fechar compra
       </button>

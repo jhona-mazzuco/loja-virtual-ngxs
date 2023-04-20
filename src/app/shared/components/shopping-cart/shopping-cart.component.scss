@@ -13,16 +13,49 @@
     margin: 0;
     padding: 0;
     gap: 8px;
+
+    &:first-child {
+      border-top: 1px solid #c3c3c3;
+    }
   }
 
   &__item {
-    border-top: 1px solid #c3c3c3;
+    display: inline-flex;
     border-bottom: 1px solid #c3c3c3;
+    gap: 8px;
+    padding: 1rem 0.25rem;
+  }
+
+  &__detail {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__price {
+    font-weight: 500;
+    margin: 0;
+  }
+
+  &__title {
+    max-width: 160px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &__row {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
 .footer {
   padding-top: 16px;
+
+  &__total {
+    font-weight: 500;
+  }
 
   button {
     width: 100%;
