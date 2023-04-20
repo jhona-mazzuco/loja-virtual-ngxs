@@ -10,10 +10,10 @@ Sinta-se à vontade para explorar o código fonte desta aplicação, experimenta
 
 ### Requisitos:
 
-- [ ] A aplicação deve permitir que os usuários naveguem pelos produtos disponíveis na loja.
-- [ ] Os usuários devem ser capazes de adicionar produtos ao carrinho de compras e visualizar os itens que já foram adicionados.
-- [ ] Os usuários devem ser capazes de remover itens do carrinho de compras.
-- [ ] Os usuários devem ser capazes de visualizar o total da compra.
+- [x] A aplicação deve permitir que os usuários naveguem pelos produtos disponíveis na loja.
+- [x] Os usuários devem ser capazes de adicionar produtos ao carrinho de compras e visualizar os itens que já foram adicionados.
+- [x] Os usuários devem ser capazes de remover itens do carrinho de compras.
+- [x] Os usuários devem ser capazes de visualizar o total da compra.
 - [ ] A aplicação deve ser responsiva e amigável para dispositivos móveis.
 
 ### Fluxos:
