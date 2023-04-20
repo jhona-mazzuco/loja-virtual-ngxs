@@ -1,0 +1,13 @@
+<div class="preview">
+  <div class="preview__options">
+    <ng-container *ngFor="let image of images">
+      <a class="option" (click)="preview = image">
+        <img [ngSrc]="image" height="60" width="60" />
+      </a>
+    </ng-container>
+  </div>
+
+  <div class="preview__image">
+    <img [srcset]="preview" height="400" width="600" alt="image"/>
+  </div>
+</div>

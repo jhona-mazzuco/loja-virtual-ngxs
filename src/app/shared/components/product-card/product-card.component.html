@@ -1,0 +1,14 @@
+<div class="product" routerLink="product/{{ product.id }}/detail">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title class="product__title">{{ product.title }}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="product__divisor">
+        <img class="product__image" [ngSrc]="product.images[0]" width="80" height="80" alt="Item Image" />
+        <p class="product__price">{{ product.price | currency: 'R$' }}</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

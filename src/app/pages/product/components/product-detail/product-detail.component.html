@@ -1,0 +1,12 @@
+<div class="detail">
+  <h1 class="detail__price">
+    {{ product.price | currency: 'R$' }}
+  </h1>
+
+  <div class="detail__action">
+    <button mat-raised-button color="primary">
+      <mat-icon>add_shopping_cart</mat-icon>
+      Adicionar ao carrinho
+    </button>
+  </div>
+</div>

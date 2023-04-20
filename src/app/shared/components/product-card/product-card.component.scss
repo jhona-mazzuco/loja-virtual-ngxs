@@ -1,0 +1,31 @@
+.product {
+  width: 350px;
+  cursor: pointer;
+  transition: color 200ms;
+
+  &:hover {
+    color: blueviolet;
+  }
+
+  &__title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 320px;
+    overflow: hidden;
+  }
+
+  &__divisor {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__image {
+    border-radius: 8px;
+  }
+
+  &__price {
+    font-weight: 500;
+    font-size: 20px;
+  }
+}

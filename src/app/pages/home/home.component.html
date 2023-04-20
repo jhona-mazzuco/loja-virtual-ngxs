@@ -1,0 +1,9 @@
+<div class="home">
+  <h1 class="home__title">Produtos</h1>
+
+  <div class="home__products">
+    <ng-container *ngIf="items$ | async;let items">
+      <app-product-card *ngFor="let product of items" [product]="product"></app-product-card>
+    </ng-container>
+  </div>
+</div>

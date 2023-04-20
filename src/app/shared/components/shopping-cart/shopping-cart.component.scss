@@ -1,0 +1,30 @@
+.container {
+  padding-top: 1rem;
+
+  &__empty {
+    text-align: center;
+    font-size: 12px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 8px;
+  }
+
+  &__item {
+    border-top: 1px solid #c3c3c3;
+    border-bottom: 1px solid #c3c3c3;
+  }
+}
+
+.footer {
+  padding-top: 16px;
+
+  button {
+    width: 100%;
+  }
+}

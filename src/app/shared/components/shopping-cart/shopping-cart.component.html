@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Carrinho de compras</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="container">
+      <ng-container *ngIf="items?.length;else EmptyTemplate">
+        <ng-container *ngFor="let item of items">
+          <ul class="container__list">
+            <li class="container__item">
+              <img ngSrc="{{ item.images[0] }}" width="60" height="60" />
+              <span>{{ item.title  }}</span>
+            </li>
+          </ul>
+        </ng-container>
+      </ng-container>
+      <ng-template #EmptyTemplate>
+        <p class="container__empty">Nenhum produto adicionado!</p>
+      </ng-template>
+    </div>
+
+    <div class="footer">
+      <button class="footer__button" mat-flat-button color="primary">
+        Fechar compra
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

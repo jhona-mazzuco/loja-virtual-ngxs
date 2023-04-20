@@ -1,0 +1,10 @@
+.navbar {
+  &__home {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__spacer {
+    flex: 1 1 auto;
+  }
+}

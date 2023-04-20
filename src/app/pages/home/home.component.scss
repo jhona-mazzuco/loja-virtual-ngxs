@@ -1,0 +1,11 @@
+.home {
+  &__title {
+    font-weight: 700;
+  }
+
+  &__products {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.825rem;
+  }
+}

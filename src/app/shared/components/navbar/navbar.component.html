@@ -1,0 +1,21 @@
+<p class="navbar">
+  <mat-toolbar color="primary">
+    <a class="navbar__home" routerLink="/">Loja Virtual NGXS</a>
+    <span class="navbar__spacer"></span>
+    <button mat-icon-button aria-label="Shopping cart button" (click)="isOpen = !isOpen"
+            cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+  </mat-toolbar>
+</p>
+
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="isOpen"
+  [cdkConnectedOverlayHasBackdrop]="true"
+  cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+  (backdropClick)="isOpen = false"
+>
+  <app-shopping-cart></app-shopping-cart>
+</ng-template>
