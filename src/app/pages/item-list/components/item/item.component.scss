@@ -1,0 +1,28 @@
+.item {
+    width: 350px;
+    display: flex;
+
+    &__header {
+        display: inline-flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    &__image {
+        width: 100px;
+        height: 100px;
+    }
+
+    &__title {
+        overflow: hidden;
+        width: 300px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: 16px;
+    }
+
+    &__price {
+        font-weight: 700;
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,24 @@
+.wrapper {
+  display: inline-flex;
+  width: 100%;
+  gap: 0.25em;
+  height: 550px;
+  box-sizing: border-box;
+  background: white;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.725em;
+    overflow-y: auto;
+  }
+
+  &__view {
+    display: flex;
+    align-items: center;
+
+    img {
+      max-height: 500px;
+    }
+  }
+}

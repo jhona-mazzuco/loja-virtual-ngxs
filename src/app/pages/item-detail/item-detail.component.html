@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <ng-container *ngIf="data">
+    <div class="wrapper__left">
+      <app-image-view [images]="data.images"></app-image-view>
+    </div>
+    <div class="wrapper__right">
+      <app-item-data></app-item-data>
+      <app-buy-button></app-buy-button>
+    </div>
+  </ng-container>
+</div>

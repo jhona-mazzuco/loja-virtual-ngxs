@@ -1,0 +1,11 @@
+<div class="item" routerLink="{{item.id}}/detail">
+    <mat-card>
+        <mat-card-header class="item__header">
+            <img [src]="item.images[0]" class="item__image"  />
+        </mat-card-header>
+        <mat-card-content>
+            <h1 class="item__title" matTooltip="{{ item.title }}">{{ item.title }}</h1>
+            <p class="item__price">{{ item.price | currency: 'R$' }}</p>
+        </mat-card-content>
+    </mat-card>
+</div>
