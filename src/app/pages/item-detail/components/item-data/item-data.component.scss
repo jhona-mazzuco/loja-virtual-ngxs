@@ -1,0 +1,33 @@
+@use 'node_modules/@angular/material' as mat;
+
+.data {
+    &__row {
+        display: inline-flex;
+        gap: 8px;
+        justify-content: space-between;
+    }
+
+    &__title {
+        white-space: pre-wrap;
+    }
+
+    &__left p {
+        margin-bottom: 1.235rem;
+    }
+
+    &__price {
+        text-decoration: line-through;
+        color: #c6c6c6;
+        font-size: 24px;
+    }
+
+    &__discount {
+        font-size: 36px;
+        color: mat.get-color-from-palette(mat.$red-palette, 500);
+        font-weight: bolder;
+    }
+
+    &__credit {
+        color: #2d2d2d;
+    }
+}

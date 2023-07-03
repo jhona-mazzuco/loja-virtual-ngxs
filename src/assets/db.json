@@ -4,6 +4,7 @@
         "id": 1,
         "title": "Smartphone Samsung Galaxy A23 128GB Branco 4G - Octa-Core 4GB RAM 6,6” Câm Quádrupla + Selfie 8MP",
         "price": 1199.00,
+        "discount": 0.05,
         "images": [
           "https://a-static.mlcdn.com.br/800x560/smartphone-samsung-galaxy-a23-128gb-branco-4g-octa-core-4gb-ram-66-cam-quadrupla-selfie-8mp/magazineluiza/234749900/ca9fa16bf1cfd38bb5923eec9e2cfd53.jpg",
           "https://a-static.mlcdn.com.br/1500x1500/smartphone-samsung-galaxy-a23-128gb-branco-4g-octa-core-4gb-ram-66-cam-quadrupla-selfie-8mp/magazineluiza/234749900/c8f16ada4102ffc07f616d105e71ca53.jpg",
@@ -17,6 +18,7 @@
         "id": 2,
         "title": "Apple iPhone 13 128GB Estelar Tela 6,1” 12MP",
         "price": 4391.10,
+        "discount": 0.15,
         "images": [
           "https://a-static.mlcdn.com.br/800x560/apple-iphone-13-128gb-estelar-tela-61-12mp/magazineluiza/234661900/a783ddbd0a2cdce3a0b21bb2c90bbad3.jpg",
           "https://a-static.mlcdn.com.br/800x560/apple-iphone-13-128gb-estelar-tela-61-12mp/magazineluiza/234661900/0ae6bac6f34c6fcb296a3756473c22bc.jpg",
@@ -28,6 +30,7 @@
         "id": 3,
         "title": "Smartphone Motorola Moto G32 128GB Rosé 4G Octa-Core 4GB RAM 6,5” Câm. Tripla + Selfie 16MP",
         "price": 1079.99,
+        "discount": 0.1,
         "images": [
           "https://a-static.mlcdn.com.br/1500x1500/smartphone-motorola-moto-g32-128gb-rose-4g-octa-core-4gb-ram-65-cam-tripla-selfie-16mp/magazineluiza/235627000/5d19a07fc9be69350806c2c7839b805c.jpg",
           "https://a-static.mlcdn.com.br/1500x1500/smartphone-motorola-moto-g32-128gb-rose-4g-octa-core-4gb-ram-65-cam-tripla-selfie-16mp/magazineluiza/235627000/f14b91b13e0897c8e5be1650125ec689.jpg",
@@ -40,6 +43,7 @@
         "id": 4,
         "title": "iPhone 11 Apple 64GB Preto 6,1” 12MP iOS",
         "price": 2898.90,
+        "discount": 0.08,
         "images": [
           "https://a-static.mlcdn.com.br/800x560/iphone-11-apple-64gb-preto-61-12mp-ios/magazineluiza/155610500/2815c001fcdff11766fcb266dca62daf.jpg",
           "https://a-static.mlcdn.com.br/800x560/iphone-11-apple-64gb-preto-61-12mp-ios/magazineluiza/155610500/c8091e48c89951af28020c94ad0916cb.jpg",

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Item } from 'src/app/core/interfaces/item.interface';
 
 @Component({
   selector: 'app-item-data',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./item-data.component.scss']
 })
 export class ItemDataComponent {
-
+  @Input() data: Item | undefined = undefined;
 }

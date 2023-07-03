@@ -1,1 +1,15 @@
-<p>item-data works!</p>
+<div class="data">
+    <ng-container *ngIf="!!data">
+        <h1 class="data__title">{{data.title}}</h1>
+        <div class="data__row">
+            <div class="data__left">
+                <p class="data__price">{{data.price | currency: 'R$'}}</p>
+                <p class="data__discount">{{data.price | applyDiscount: data.discount | currency: 'R$'}}</p>
+                <p class="data__credit">
+                    Em até 10x de <b>{{data.price | divide: 10 | currency: 'R$'}}</b> sem juros no cartão
+                </p>
+            </div>
+            <div class="data__right"></div>
+        </div>
+    </ng-container>
+</div>

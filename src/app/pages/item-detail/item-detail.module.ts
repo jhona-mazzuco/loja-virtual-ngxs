@@ -8,6 +8,8 @@ import { ImageOptionComponent } from './components/image-option/image-option.com
 import { ImageViewComponent } from './components/image-view/image-view.component';
 import { ItemDataComponent } from './components/item-data/item-data.component';
 import { ItemSuggentionsComponent } from './components/item-suggentions/item-suggentions.component';
+import { ApplyDiscountPipe } from 'src/app/shared/pipes/apply-discount.pipe';
+import { DividePipe } from './pipes/divide.pipe';
 
 
 @NgModule({
@@ -17,12 +19,14 @@ import { ItemSuggentionsComponent } from './components/item-suggentions/item-sug
     ImageOptionComponent,
     ImageViewComponent,
     ItemDataComponent,
-    ItemSuggentionsComponent
+    ItemSuggentionsComponent,
+    DividePipe
   ],
   imports: [
     CommonModule,
     RouterModule.forChild([{path: '', component: ItemDetailComponent}]),
     NgOptimizedImage,
+    ApplyDiscountPipe
   ],
   providers: [NgOptimizedImage]
 })

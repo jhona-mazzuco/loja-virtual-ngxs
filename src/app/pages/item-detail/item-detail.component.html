@@ -1,11 +1,12 @@
-<div class="wrapper">
+<div class="detail">
   <ng-container *ngIf="data">
-    <div class="wrapper__left">
+    <div class="detail__left">
       <app-image-view [images]="data.images"></app-image-view>
     </div>
-    <div class="wrapper__right">
-      <app-item-data></app-item-data>
-      <app-buy-button></app-buy-button>
+    <div class="detail__right">
+      <app-item-data [data]="data">
+        <app-buy-button [data]="data"></app-buy-button>
+      </app-item-data>
     </div>
   </ng-container>
 </div>
