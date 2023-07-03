@@ -10,11 +10,13 @@
 </p>
 
 <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen">
-    <mat-card>
-<mat-card-content>
-    <ul class="example-list">
-        <li *ngFor="let item of items$ | async">{{ item.title }}</li>
-    </ul>
-</mat-card-content>
+    <mat-card class="navbar__item">
+        <mat-card-content>
+            <ul class="example-list">
+                <ng-container *ngIf="items$ | async; let items">
+                    <app-cart-item [item]="item" *ngFor="let item of items"></app-cart-item>
+                </ng-container>
+            </ul>
+        </mat-card-content>
     </mat-card>
 </ng-template>

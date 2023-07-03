@@ -9,6 +9,8 @@ import { Observable } from 'rxjs';
 import { MarketShareState } from '../../states/market-share.state';
 import { Select } from '@ngxs/store';
 import { CommonModule } from '@angular/common';
+import { MarketShareItem } from '../../interfaces/market-share-item.interface';
+import { CartItemComponent } from '../cart-item/cart-item.component';
 
 @Component({
   standalone: true,
@@ -22,9 +24,10 @@ import { CommonModule } from '@angular/common';
     MatButtonModule,
     OverlayModule,
     MatCardModule,
+    CartItemComponent
   ]
 })
 export class NavbarComponent {
   isOpen = false;
-  @Select(MarketShareState) items$!: Observable<Item[]>;
+  @Select(MarketShareState) items$!: Observable<MarketShareItem[]>;
 }

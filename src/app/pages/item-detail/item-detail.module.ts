@@ -10,6 +10,8 @@ import { ItemDataComponent } from './components/item-data/item-data.component';
 import { ItemSuggentionsComponent } from './components/item-suggentions/item-suggentions.component';
 import { ApplyDiscountPipe } from 'src/app/shared/pipes/apply-discount.pipe';
 import { DividePipe } from './pipes/divide.pipe';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { DividePipe } from './pipes/divide.pipe';
     CommonModule,
     RouterModule.forChild([{path: '', component: ItemDetailComponent}]),
     NgOptimizedImage,
-    ApplyDiscountPipe
+    ApplyDiscountPipe,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [NgOptimizedImage]
 })

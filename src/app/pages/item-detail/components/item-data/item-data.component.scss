@@ -5,6 +5,7 @@
         display: inline-flex;
         gap: 8px;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
 
     &__title {
@@ -13,6 +14,11 @@
 
     &__left p {
         margin-bottom: 1.235rem;
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
     }
 
     &__price {
