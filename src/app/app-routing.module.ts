@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: ':id/detail',
     loadChildren: () => import('./pages/item-detail/item-detail.module').then(m => m.ItemDetailModule)
+  },
+  {
+    path: 'checkout',
+    loadChildren: () => import('./pages/checkout/checkout.module').then(m => m.CheckoutModule)
   }
 ];
 

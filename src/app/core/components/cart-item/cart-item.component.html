@@ -1,5 +1,6 @@
 <div class="cart-item" *ngIf="item">
-  <img src="{{item!.images[0]}}">
-  <p>{{item!.title}}</p>
-  <app-remove-item-button></app-remove-item-button>
+  <b class="cart-item__qtd">{{ item!.qtd }}</b>
+  <img src="{{ item!.images[0] }}" class="cart-item__img"/>
+  <p>{{ item!.title }}</p>
+  <app-remove-item-button [item]="item"></app-remove-item-button>
 </div>

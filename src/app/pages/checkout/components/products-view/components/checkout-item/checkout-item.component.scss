@@ -1,17 +1,14 @@
-.cart-item {
+.checkout-item {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  flex-wrap: nowrap;
+  gap: 16px;
 
   &__img {
-    width: 36px;
-    height: 36px;
+    width: 70px;
+    height: 70px;
     border: 1px solid #868686;
     border-radius: 6px;
     padding: 3px;
-  }
-
-  &__qtd {
-    font-size: 14px;
   }
 }

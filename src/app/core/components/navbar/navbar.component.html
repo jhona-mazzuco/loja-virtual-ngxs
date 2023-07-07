@@ -1,22 +1,41 @@
 <p class="navbar">
-    <mat-toolbar color="warn">
-        <a class="navbar__home" routerLink="/">Loja Virtual NGXS</a>
-        <span class="navbar__spacer"></span>
-        <button mat-icon-button aria-label="Shopping cart button" (click)="isOpen = !isOpen" cdkOverlayOrigin
-            #trigger="cdkOverlayOrigin">
-            <mat-icon>shopping_cart</mat-icon>
-        </button>
-    </mat-toolbar>
+  <mat-toolbar color="warn">
+    <a class="navbar__home" routerLink="/">Loja Virtual NGXS</a>
+    <span class="navbar__spacer"></span>
+    <button
+      mat-icon-button
+      aria-label="Shopping cart button"
+      (click)="isOpen = !isOpen"
+      cdkOverlayOrigin
+      #trigger="cdkOverlayOrigin"
+    >
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+  </mat-toolbar>
 </p>
 
-<ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen">
-    <mat-card class="navbar__item">
-        <mat-card-content>
-            <ul class="example-list">
-                <ng-container *ngIf="items$ | async; let items">
-                    <app-cart-item [item]="item" *ngFor="let item of items"></app-cart-item>
-                </ng-container>
-            </ul>
-        </mat-card-content>
-    </mat-card>
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="isOpen"
+  [cdkConnectedOverlayHasBackdrop]="true"
+  cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+  (backdropClick)="isOpen = false"
+>
+  <mat-card class="navbar__item">
+    <mat-card-content>
+      <ng-container *ngIf="items$ | async; let items">
+        <ng-container *ngIf="items.length; else EmptyTemplate">
+          <app-cart-item [item]="item" *ngFor="let item of items"></app-cart-item>
+          <div class="navbar__button">
+            <button mat-raised-button color="warn" routerLink="/checkout">Finalizar compra</button>
+          </div>
+        </ng-container>
+      </ng-container>
+    </mat-card-content>
+  </mat-card>
+</ng-template>
+
+<ng-template #EmptyTemplate>
+  <p class="navbar__empty">Seu carrinho está vazio</p>
 </ng-template>

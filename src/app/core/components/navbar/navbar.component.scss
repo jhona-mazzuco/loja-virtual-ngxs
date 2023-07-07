@@ -11,4 +11,19 @@
     &__item {
         width: 400px;
     }
+
+    &__empty {
+      width: 100%;
+      text-align: center;
+      font-weight: 600;
+      font-size: 18px;
+      color: #868686;
+      padding: 1rem 0;
+    }
+
+    &__button {
+      width: 100%;
+      display: inline-flex;
+      flex-direction: row-reverse;
+    }
 }

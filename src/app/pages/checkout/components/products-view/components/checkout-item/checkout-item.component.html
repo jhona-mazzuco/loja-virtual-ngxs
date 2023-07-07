@@ -1,0 +1,6 @@
+<div class="checkout-item">
+  <img src="{{ item!.images[0] }}" class="checkout-item__img"/>
+  <p>{{ item!.title }}</p>
+  <b class="checkout-item__qtd">{{ item!.qtd }}</b>
+  <app-remove-item-button [item]="item"></app-remove-item-button>
+</div>

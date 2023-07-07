@@ -11,6 +11,7 @@ import { Select } from '@ngxs/store';
 import { CommonModule } from '@angular/common';
 import { MarketShareItem } from '../../interfaces/market-share-item.interface';
 import { CartItemComponent } from '../cart-item/cart-item.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -24,7 +25,8 @@ import { CartItemComponent } from '../cart-item/cart-item.component';
     MatButtonModule,
     OverlayModule,
     MatCardModule,
-    CartItemComponent
+    CartItemComponent,
+    RouterModule
   ]
 })
 export class NavbarComponent {
