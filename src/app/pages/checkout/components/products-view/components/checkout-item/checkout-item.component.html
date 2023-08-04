@@ -1,6 +1,11 @@
 <div class="checkout-item">
   <img src="{{ item!.images[0] }}" class="checkout-item__img"/>
-  <p>{{ item!.title }}</p>
-  <b class="checkout-item__qtd">{{ item!.qtd }}</b>
-  <app-remove-item-button [item]="item"></app-remove-item-button>
+  <p class="checkout-item__title">{{ item!.title }}</p>
+  <b class="checkout-item__qtd">
+    <app-item-qty-control [item]="item"></app-item-qty-control>
+  </b>
+  <div class="checkout-item__value">
+    <p>Preço à vista no PIX:</p>
+    <b>{{ item.qtd * item.price | currency: 'R$' }}</b>
+  </div>
 </div>

@@ -1,19 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Action, NgxsOnInit, Selector, State, StateContext } from '@ngxs/store';
+import { Action, State, StateContext } from '@ngxs/store';
 import { AddItem } from '../actions/addItem';
 import { RemoveItem } from '../actions/removeItem';
 import { MarketShareItem } from '../interfaces/market-share-item.interface';
+import { RemoveAll } from '../actions/RemoveAll';
+import { ClearList } from '../actions/ClearList';
 
 @State<MarketShareItem[]>({
   name: 'marketShare',
   defaults: [],
 })
 @Injectable()
-export class MarketShareState implements NgxsOnInit {
-  ngxsOnInit(ctx: StateContext<MarketShareItem[]>): void {
-    const sessionState = window.sessionStorage.getItem('marketShare');
-    if (sessionState) ctx.setState(JSON.parse(sessionState));
-  }
+export class MarketShareState {
 
   @Action(AddItem)
   addItem(ctx: StateContext<MarketShareItem[]>, action: AddItem) {
@@ -28,7 +26,6 @@ export class MarketShareState implements NgxsOnInit {
     }
 
     ctx.setState(state);
-    this.updateState(state);
   }
 
   @Action(RemoveItem)
@@ -44,10 +41,18 @@ export class MarketShareState implements NgxsOnInit {
       }
     }
     ctx.setState(state);
-    this.updateState(state);
   }
 
-  updateState(state: MarketShareItem[]) {
-    window.sessionStorage.setItem('marketShare', JSON.stringify(state));
+  @Action(RemoveAll)
+  removeAll(ctx: StateContext<MarketShareItem[]>, action: RemoveAll) {
+    const items = ctx.getState();
+    const idx = items.findIndex(row => row.id === action.payload.id)!;
+    items.splice(idx, -1);
+    ctx.setState(items);
+  }
+
+  @Action(ClearList)
+  clearList(ctx: StateContext<MarketShareItem[]>) {
+    ctx.setState([]);
   }
 }

@@ -1,3 +1,7 @@
+<style>
+  .navbar__market-share {
+  }
+</style>
 <p class="navbar">
   <mat-toolbar color="warn">
     <a class="navbar__home" routerLink="/">Loja Virtual NGXS</a>
@@ -26,9 +30,12 @@
     <mat-card-content>
       <ng-container *ngIf="items$ | async; let items">
         <ng-container *ngIf="items.length; else EmptyTemplate">
-          <app-cart-item [item]="item" *ngFor="let item of items"></app-cart-item>
-          <div class="navbar__button">
-            <button mat-raised-button color="warn" routerLink="/checkout">Finalizar compra</button>
+          <div class="navbar__market-share">
+            <app-cart-item [item]="item" *ngFor="let item of items"></app-cart-item>
+            <span>Valor dos Produtos: <b>{{ items | calculateTotal | currency: 'R$' }}</b></span>
+            <div class="navbar__button">
+              <button mat-raised-button color="warn" routerLink="/checkout">Finalizar compra</button>
+            </div>
           </div>
         </ng-container>
       </ng-container>

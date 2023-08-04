@@ -1,5 +1,20 @@
 <div class="products">
-  <div class="products__item" *ngIf="items$ | async; let items">
-    <app-checkout-item [item]="item" *ngFor="let item of items"></app-checkout-item>
-  </div>
+  <ng-container *ngIf="items$ | async; let items">
+    <div class="products__header">
+      <h1 class="products__title">Produtos</h1>
+      <button mat-raised-button color="warn" *ngIf="items.length" (click)="removeAll()">
+        <mat-icon>delete</mat-icon>
+        Remover todos
+      </button>
+    </div>
+    <ng-container *ngIf="items.length; else EmptyTemplate">
+      <div class="products__items">
+        <app-checkout-item [item]="item" *ngFor="let item of items"></app-checkout-item>
+      </div>
+    </ng-container>
+
+    <ng-template #EmptyTemplate>
+      <b>Adicione itens</b>
+    </ng-template>
+  </ng-container>
 </div>

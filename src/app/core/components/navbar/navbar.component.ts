@@ -4,7 +4,6 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { OverlayModule } from "@angular/cdk/overlay";
-import { Item } from '../../interfaces/item.interface';
 import { Observable } from 'rxjs';
 import { MarketShareState } from '../../states/market-share.state';
 import { Select } from '@ngxs/store';
@@ -12,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { MarketShareItem } from '../../interfaces/market-share-item.interface';
 import { CartItemComponent } from '../cart-item/cart-item.component';
 import { RouterModule } from '@angular/router';
+import { CalculateTotalPipe } from '../../../shared/pipes/calculate-total.pipe';
 
 @Component({
   standalone: true,
@@ -26,8 +26,10 @@ import { RouterModule } from '@angular/router';
     OverlayModule,
     MatCardModule,
     CartItemComponent,
-    RouterModule
-  ]
+    RouterModule,
+    CalculateTotalPipe
+  ],
+  providers: [CalculateTotalPipe]
 })
 export class NavbarComponent {
   isOpen = false;

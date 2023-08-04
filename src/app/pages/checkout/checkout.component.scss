@@ -1,14 +1,26 @@
-.checkout {
-  display: inline-flex;
-  box-sizing: border-box;
-  padding: 1.5rem;
-  gap: 8px;
+@mixin card {
   background-color: white;
-  width: 100%;
-  border-radius: 8px;
   box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.23);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+
+.checkout {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  width: 100%;
+
+  &__right, &__left {
+    @include card;
+  }
+
+  &__left {
+    width: 80%;
+  }
 
   &__right {
-    width: 100%;
+    width: 20%;
   }
 }

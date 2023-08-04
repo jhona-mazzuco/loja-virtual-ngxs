@@ -1,29 +1,35 @@
 .navbar {
-    &__home {
-        color: inherit;
-        text-decoration: none;
-    }
+  &__home {
+    color: inherit;
+    text-decoration: none;
+  }
 
-    &__spacer {
-        flex: 1 1 auto;
-    }
+  &__spacer {
+    flex: 1 1 auto;
+  }
 
-    &__item {
-        width: 400px;
-    }
+  &__item {
+    width: 400px;
+  }
 
-    &__empty {
-      width: 100%;
-      text-align: center;
-      font-weight: 600;
-      font-size: 18px;
-      color: #868686;
-      padding: 1rem 0;
-    }
+  &__empty {
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    color: #868686;
+    padding: 1rem 0;
+  }
 
-    &__button {
-      width: 100%;
-      display: inline-flex;
-      flex-direction: row-reverse;
-    }
+  &__button {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row-reverse;
+  }
+
+  &__market-share {
+    display: flex;
+    flex-direction: column;
+    gap: 16px
+  }
 }

@@ -7,11 +7,15 @@ import { ResumeComponent } from './components/resume/resume.component';
 import { CheckoutItemComponent } from './components/products-view/components/checkout-item/checkout-item.component';
 import { RemoveItemButtonComponent } from '../../shared/components/remove-item-button/remove-item-button.component';
 import { NgxsModule } from '@ngxs/store';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { ItemQtyControlComponent } from './components/products-view/components/item-qty-control/item-qty-control.component';
 
 const routes: Routes = [{ path: '', component: CheckoutComponent }];
 
 @NgModule({
-  declarations: [CheckoutComponent, ProductsViewComponent, ResumeComponent, CheckoutItemComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), RemoveItemButtonComponent, NgxsModule],
+  declarations: [CheckoutComponent, ProductsViewComponent, ResumeComponent, CheckoutItemComponent, ItemQtyControlComponent],
+  imports: [CommonModule, RouterModule.forChild(routes), RemoveItemButtonComponent, NgxsModule, MatButtonModule, MatIconModule],
 })
-export class CheckoutModule {}
+export class CheckoutModule {
+}

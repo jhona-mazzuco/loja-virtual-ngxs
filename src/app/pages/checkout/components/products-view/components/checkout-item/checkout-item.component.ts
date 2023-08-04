@@ -7,6 +7,6 @@ import { MarketShareItem } from 'src/app/core/interfaces/market-share-item.inter
   styleUrls: ['./checkout-item.component.scss']
 })
 export class CheckoutItemComponent {
-  @Input() item: MarketShareItem | undefined;
+  @Input({ required: true }) item!: MarketShareItem;
 
 }

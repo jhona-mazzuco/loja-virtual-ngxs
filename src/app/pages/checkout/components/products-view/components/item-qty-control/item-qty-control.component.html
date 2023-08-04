@@ -1,0 +1,13 @@
+<div class="control">
+  <span class="control__title">Quant.</span>
+  <div class="control__container">
+    <button mat-icon-button color="warn" (click)="change(false)">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    <div>{{ item.qtd }}</div>
+    <button mat-icon-button color="warn" (click)="change()">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+  <app-remove-item-button [removeAll]="true" [item]="item">Remover</app-remove-item-button>
+</div>

@@ -1,0 +1,33 @@
+.products {
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+
+    > app-checkout-item {
+      border-top: 1px solid #f3f3f3;
+
+      &:first-child {
+        border-top: 0;
+      }
+    }
+
+  }
+}
