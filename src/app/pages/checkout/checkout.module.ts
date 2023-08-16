@@ -10,12 +10,14 @@ import { NgxsModule } from '@ngxs/store';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ItemQtyControlComponent } from './components/products-view/components/item-qty-control/item-qty-control.component';
+import { CalculateTotalPipe } from 'src/app/shared/pipes/calculate-total.pipe';
+import { ApplyDiscountPipe } from 'src/app/shared/pipes/apply-discount.pipe';
 
 const routes: Routes = [{ path: '', component: CheckoutComponent }];
 
 @NgModule({
   declarations: [CheckoutComponent, ProductsViewComponent, ResumeComponent, CheckoutItemComponent, ItemQtyControlComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), RemoveItemButtonComponent, NgxsModule, MatButtonModule, MatIconModule],
+  imports: [CommonModule, RouterModule.forChild(routes), RemoveItemButtonComponent, NgxsModule, MatButtonModule, MatIconModule, CalculateTotalPipe, ApplyDiscountPipe],
 })
 export class CheckoutModule {
 }

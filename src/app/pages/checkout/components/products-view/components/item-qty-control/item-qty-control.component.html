@@ -1,7 +1,7 @@
 <div class="control">
   <span class="control__title">Quant.</span>
   <div class="control__container">
-    <button mat-icon-button color="warn" (click)="change(false)">
+    <button mat-icon-button color="warn" (click)="change(false)" [disabled]="item.qtd === 1">
       <mat-icon>chevron_left</mat-icon>
     </button>
     <div>{{ item.qtd }}</div>

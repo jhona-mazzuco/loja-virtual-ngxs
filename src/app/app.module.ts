@@ -9,6 +9,8 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxsStoragePluginModule, StorageOption } from '@ngxs/storage-plugin';
+import { ApplyDiscountPipe } from './shared/pipes/apply-discount.pipe';
+import { CalculateTotalPipe } from './shared/pipes/calculate-total.pipe';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,14 @@ import { NgxsStoragePluginModule, StorageOption } from '@ngxs/storage-plugin';
       storage: StorageOption.LocalStorage
     }),
     BrowserAnimationsModule,
-    NavbarComponent
+    NavbarComponent,
+    ApplyDiscountPipe,
+    CalculateTotalPipe
   ],
-  providers: [],
+  providers: [
+    ApplyDiscountPipe,
+    CalculateTotalPipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

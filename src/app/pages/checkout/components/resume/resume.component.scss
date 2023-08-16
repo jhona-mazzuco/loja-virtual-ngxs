@@ -1,0 +1,49 @@
+.resume {
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 36px;
+
+    mat-icon {
+      font-size: 36px;
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  &__content {
+    padding-top: 2rem;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+
+    &--border-bottom {
+      border-bottom: 0.5px solid rgb(222, 224, 228);
+    }
+
+    p {
+      margin: 0;
+      color: rgb(127, 133, 141);
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    span {
+      font-size: 1rem;
+      line-height: 1.75rem;
+      font-weight: 700;
+      color: rgb(66, 70, 77);
+      text-align: right;
+    }
+  }
+}

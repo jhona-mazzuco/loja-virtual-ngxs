@@ -1,10 +1,12 @@
-import { Injectable } from '@angular/core';
-import { Action, State, StateContext } from '@ngxs/store';
+import { Injectable, inject } from '@angular/core';
+import { Action, Selector, State, StateContext, createSelector } from '@ngxs/store';
 import { AddItem } from '../actions/addItem';
 import { RemoveItem } from '../actions/removeItem';
 import { MarketShareItem } from '../interfaces/market-share-item.interface';
 import { RemoveAll } from '../actions/RemoveAll';
 import { ClearList } from '../actions/ClearList';
+import { CalculateTotalPipe } from 'src/app/shared/pipes/calculate-total.pipe';
+import { state } from '@angular/animations';
 
 @State<MarketShareItem[]>({
   name: 'marketShare',
@@ -12,6 +14,9 @@ import { ClearList } from '../actions/ClearList';
 })
 @Injectable()
 export class MarketShareState {
+  static getTotal(calculationPipe: CalculateTotalPipe, hasDiscount = false) {
+    return createSelector([MarketShareState], (state) =>  calculationPipe.transform(state, hasDiscount))
+  }
 
   @Action(AddItem)
   addItem(ctx: StateContext<MarketShareItem[]>, action: AddItem) {
@@ -47,7 +52,7 @@ export class MarketShareState {
   removeAll(ctx: StateContext<MarketShareItem[]>, action: RemoveAll) {
     const items = ctx.getState();
     const idx = items.findIndex(row => row.id === action.payload.id)!;
-    items.splice(idx, -1);
+    items.splice(idx, 1);
     ctx.setState(items);
   }
 

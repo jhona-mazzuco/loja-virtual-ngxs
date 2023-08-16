@@ -1,1 +1,20 @@
-<p>resume works!</p>
+<div class="resume">
+  <div class="resume__title">
+    <mat-icon color="warn">shopping_cart_checkout</mat-icon>
+    Resumo
+  </div>
+  <div class="resume__content">
+    <div class="resume__row resume__row--border-bottom">
+      <p>Valor dos produtos: </p>
+      <span>{{ total$ | async | currency: 'R$' }}</span>
+    </div>
+    <div class="resume__row">
+      <p>Frete: </p>
+      <span>{{ 0 | currency: 'R$' }}</span>
+    </div>
+    <div class="resume__row">
+      <p>Total á vista: </p>
+      <span>{{ totalWithDiscount$ | async | currency: 'R$' }}</span>
+    </div>
+  </div>
+</div>

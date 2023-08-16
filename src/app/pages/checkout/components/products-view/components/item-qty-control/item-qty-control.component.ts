@@ -19,7 +19,4 @@ export class ItemQtyControlComponent {
     this.store.dispatch(isAdd ? new AddItem(this.item!) : new RemoveItem(this.item!))
   }
 
-  removeAll() {
-
-  }
 }
