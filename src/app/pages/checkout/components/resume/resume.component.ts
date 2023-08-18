@@ -1,23 +1,36 @@
-import { Component, inject } from '@angular/core';
-import { Select, Store } from '@ngxs/store';
-import { Observable } from 'rxjs';
-import { MarketShareItem } from 'src/app/core/interfaces/market-share-item.interface';
+import { tap } from 'rxjs';
+import { AddItem } from 'src/app/core/actions/addItem';
+import { ClearList } from 'src/app/core/actions/ClearList';
+import { RemoveAll } from 'src/app/core/actions/RemoveAll';
+import { RemoveItem } from 'src/app/core/actions/removeItem';
 import { MarketShareState } from 'src/app/core/states/market-share.state';
-import { CalculateTotalPipe } from 'src/app/shared/pipes/calculate-total.pipe';
+
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Actions, ofActionDispatched, Store } from '@ngxs/store';
 
 @Component({
   selector: 'app-resume',
   templateUrl: './resume.component.html',
-  styleUrls: ['./resume.component.scss']
+  styleUrls: ['./resume.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ResumeComponent {
-  total$!: Observable<number>;
-  totalWithDiscount$!: Observable<number>;
+export class ResumeComponent implements OnInit {
+  total!: number;
+  totalWithDiscount!: number;
 
-  constructor() {
-    const pipe = inject(CalculateTotalPipe);
-    const store = inject(Store);
-    this.total$ = store.select(MarketShareState.getTotal(pipe));
-    this.totalWithDiscount$ = store.select(MarketShareState.getTotal(pipe, true));
+  constructor(private actions: Actions, private store: Store, private cdr: ChangeDetectorRef) {}
+
+  ngOnInit(): void {
+    this.total = this.store.selectSnapshot(MarketShareState.getTotal());
+    this.totalWithDiscount = this.store.selectSnapshot(MarketShareState.getTotal(true));
+
+    this.actions
+      .pipe(
+        ofActionDispatched(AddItem, ClearList, RemoveAll, RemoveItem),
+        tap(() => (this.total = this.store.selectSnapshot(MarketShareState.getTotal()))),
+        tap(() => (this.totalWithDiscount = this.store.selectSnapshot(MarketShareState.getTotal(true)))),
+        tap(() => this.cdr.detectChanges())
+      )
+      .subscribe();
   }
 }

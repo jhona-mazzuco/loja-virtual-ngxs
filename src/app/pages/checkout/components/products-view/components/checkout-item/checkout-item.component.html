@@ -6,6 +6,6 @@
   </b>
   <div class="checkout-item__value">
     <p>Preço à vista no PIX:</p>
-    <b>{{ item.qtd * item.price | currency: 'R$' }}</b>
+    <b>{{ item.qtd * (item.price | applyDiscount: item.discount) | currency: 'R$' }}</b>
   </div>
 </div>

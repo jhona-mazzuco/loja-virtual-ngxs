@@ -1,12 +1,11 @@
-import { Injectable, inject } from '@angular/core';
-import { Action, Selector, State, StateContext, createSelector } from '@ngxs/store';
+import { Injectable } from '@angular/core';
+import { Action, createSelector, State, StateContext } from '@ngxs/store';
+
 import { AddItem } from '../actions/addItem';
+import { ClearList } from '../actions/ClearList';
+import { RemoveAll } from '../actions/RemoveAll';
 import { RemoveItem } from '../actions/removeItem';
 import { MarketShareItem } from '../interfaces/market-share-item.interface';
-import { RemoveAll } from '../actions/RemoveAll';
-import { ClearList } from '../actions/ClearList';
-import { CalculateTotalPipe } from 'src/app/shared/pipes/calculate-total.pipe';
-import { state } from '@angular/animations';
 
 @State<MarketShareItem[]>({
   name: 'marketShare',
@@ -14,8 +13,12 @@ import { state } from '@angular/animations';
 })
 @Injectable()
 export class MarketShareState {
-  static getTotal(calculationPipe: CalculateTotalPipe, hasDiscount = false) {
-    return createSelector([MarketShareState], (state) =>  calculationPipe.transform(state, hasDiscount))
+  static getTotal(hasDiscount = false) {
+    return createSelector([MarketShareState], (state: MarketShareItem[]) =>
+      state
+        .map((item) => item.qtd * (hasDiscount ? item.price * (1 - item.discount) : item.price))
+        .reduce((previousValue, currentValue) => (previousValue += currentValue), 0)
+    );
   }
 
   @Action(AddItem)
@@ -51,7 +54,7 @@ export class MarketShareState {
   @Action(RemoveAll)
   removeAll(ctx: StateContext<MarketShareItem[]>, action: RemoveAll) {
     const items = ctx.getState();
-    const idx = items.findIndex(row => row.id === action.payload.id)!;
+    const idx = items.findIndex((row) => row.id === action.payload.id)!;
     items.splice(idx, 1);
     ctx.setState(items);
   }
@@ -59,5 +62,11 @@ export class MarketShareState {
   @Action(ClearList)
   clearList(ctx: StateContext<MarketShareItem[]>) {
     ctx.setState([]);
+  }
+
+  calculateTotal(items: MarketShareItem[], hasDiscount = false) {
+    return items
+      .map((item) => item.qtd * (hasDiscount ? item.price * (1 - item.discount) : item.price))
+      .reduce((previousValue, currentValue) => (previousValue += currentValue), 0);
   }
 }

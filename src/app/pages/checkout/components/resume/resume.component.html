@@ -6,7 +6,7 @@
   <div class="resume__content">
     <div class="resume__row resume__row--border-bottom">
       <p>Valor dos produtos: </p>
-      <span>{{ total$ | async | currency: 'R$' }}</span>
+      <span>{{ total | currency: 'R$' }}</span>
     </div>
     <div class="resume__row">
       <p>Frete: </p>
@@ -14,7 +14,7 @@
     </div>
     <div class="resume__row">
       <p>Total á vista: </p>
-      <span>{{ totalWithDiscount$ | async | currency: 'R$' }}</span>
+      <span>{{ totalWithDiscount | currency: 'R$' }}</span>
     </div>
   </div>
 </div>
